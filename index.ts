@@ -79,8 +79,8 @@ charm.on("data", async (chunk: Buffer) => {
                             line = split.join('');
                         }
                         charm.erase("line").left(x).write(diamond + line, () => {
-                            const leftOffset = line.length - s;
-                            charm.left(leftOffset)
+                            // const leftOffset = line.length - s;
+                            // charm.left(leftOffset)
                         })
                     } else rewrite('', x);
                     break;
