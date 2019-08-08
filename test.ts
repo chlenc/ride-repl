@@ -1,5 +1,5 @@
 import repl, { REPLServer } from 'repl';
-import { repl as compiler, version } from "@waves/ride-js";
+import { repl as compiler, version} from "@waves/ride-js";
 
 let diamond: string;
 switch (process.platform) {
@@ -24,6 +24,7 @@ function print(repl: REPLServer, str: string) {
 }
 
 console.log(`\x1b[1m${'Welcome to RIDE repl\nCompiler version ' + version}\x1b[0m\n`);
+const {evaluate} = compiler();
 repl.start({
     prompt: diamond,
     useColors: true,
@@ -32,7 +33,7 @@ repl.start({
             this.displayPrompt();
             return
         }
-        const res = compiler(input);
+        const res = evaluate(input);
         if ("result" in res) {
             if (typeof res.result === "string") print(this, res.result);
             else cb(null, res.result);
