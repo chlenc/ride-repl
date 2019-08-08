@@ -28,6 +28,10 @@ repl.start({
     prompt: diamond,
     useColors: true,
     eval: function (input, context, filename, cb) {
+        if(input=== '\n'){
+            this.displayPrompt();
+            return
+        }
         const res = compiler(input);
         if ("result" in res) {
             if (typeof res.result === "string") print(this, res.result);
