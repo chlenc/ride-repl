@@ -12,7 +12,7 @@
   "author": "chlenc",
   "license": "ISC",
   "dependencies": {
-    "@waves/ride-js": "1.1.0-beta.2",
+    "@waves/ride-js": "1.1.0-beta.4",
     "charm": "^1.0.2",
     "enquirer": "^2.3.1",
     "readline": "^1.3.0"
